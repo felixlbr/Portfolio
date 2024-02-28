@@ -20,81 +20,6 @@ let tl_welcome_page = gsap.timeline({
 tl_welcome_page.to("#welcome_page h1", {scale: 50})
 .to("#welcome_page", {opacity: 0}, "<")
 .set("#welcome_page h1", {scale: 0})
-////////////////////////////////////////////////////////////////
-const config = {
-  starAnimationDuration: 1500,
-  minimumTimeBetweenStars: 250,
-  minimumDistanceBetweenStars: 75,
-  glowDuration: 75,
-  maximumGlowPointSpacing: 10,
-  colors: ["249 146 253", "252 254 255"],
-  sizes: ["1.4rem", "1rem", "0.6rem"],
-  animations: ["fall-1", "fall-2", "fall-3"]
-}
-
-let count = 0;
-  
-const rand = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min,
-      selectRandom = items => items[rand(0, items.length - 1)],
-      selectRandomX = () => rand(0, window.innerWidth),
-      selectRandomY = () => rand(0, window.scrollY);
-
-const withUnit = (value, unit) => `${value}${unit}`,
-      px = value => withUnit(value, "px"),
-      ms = value => withUnit(value, "ms");
-
-const calcDistance = (a, b) => {
-  const diffX = b.x - a.x,
-        diffY = b.y - a.y;
-  
-  return Math.sqrt(Math.pow(diffX, 2) + Math.pow(diffY, 2));
-}
-
-const calcElapsedTime = (start, end) => end - start;
-
-const appendElement = element => document.body.appendChild(element),
-      removeElement = (element, delay) => setTimeout(() => document.body.removeChild(element), delay);
-
-const createStar = () => {
-  const star = document.createElement("span"),
-        color = selectRandom(config.colors);
-  
-  star.className = "star fa-solid fa-sparkle";
-  
-  star.style.left = px(selectRandomX);
-  star.style.top = px(0);
-  star.style.fontSize = selectRandom(config.sizes);
-  star.style.color = `rgb(${color})`;
-  star.style.textShadow = `0px 0px 1.5rem rgb(${color} / 0.5)`;
-  star.style.animationName = config.animations[count++ % 3];
-  star.style.starAnimationDuration = ms(config.starAnimationDuration);
-  
-  appendElement(star);
-  console.log(star);
-  removeElement(star, config.starAnimationDuration);
-}
-
-const createGlowPoint = position => {
-  const glow = document.createElement("div");
-  
-  glow.className = "glow-point";
-  
-  glow.style.left = px(position.x);
-  glow.style.top = px(position.y);
-  
-  appendElement(glow)
-  
-  removeElement(glow, config.glowDuration);
-}
-
-const determinePointQuantity = distance => Math.max(
-  Math.floor(distance / config.maximumGlowPointSpacing),
-  1
-);
-window.onscroll = function() {
-  createStar();
-}
-
 
 ////////////////////////////////////////////////////////////////
 /* PORTFOLIO PAGE */
@@ -132,7 +57,7 @@ CustomEase.create("custom", "M0,0 C0,0 0.021,0.105 0.115,0.198 0.143,0.226 0.24,
 tl_portfolio_page
 .fromTo("header, #portfolio_page #page1 *", {y:-100, opacity:0}, { y:0,opacity:1})
 .to(window, {scrollTo:{y:window.innerHeight+1}})
-.set("body", {overflowY: "hidden"})
+//.set("body", {overflowY: "hidden"})
 .from("#page1 .paragraph .text", {
   duration: 10, 
   text: "", 
@@ -197,12 +122,11 @@ description.forEach((item) => {
   });
   ScrollTrigger.create({
     trigger: item,
-    start:(window.innerWidth) + " top",
+    start:(window.innerWidth+100) + " top",
     end: () => "+=" + item.offsetHeight,
     scrub: 1,
     onEnter: () => {
       gsap.fromTo(item, {opacity: 0.1}, {opacity: 1, stagger: 0.05 });
-      console.log("scroll", window.scrollY);
     },
     onLeaveBack: () => {   
       gsap.fromTo(item, {opacity: 1}, {opacity: 0});
@@ -227,8 +151,8 @@ gsap.to("#page2 .container", {
 /* PAGE 3 */
 let pinWrap2 = document.querySelector("#page3 .container");
 let pinWrapWidth2 = pinWrap2.offsetWidth;
-let horizontalScrollLength2 = pinWrapWidth2 + window.innerWidth + 100;
-gsap.to(".container", {
+let horizontalScrollLength2 = pinWrapWidth2 + window.innerWidth +100;
+gsap.to("#page3 .container", {
   scrollTrigger: {
     trigger: "#page3",
     start: "top top",

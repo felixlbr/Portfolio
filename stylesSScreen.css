@@ -1,0 +1,12 @@
+
+@media screen and (max-width : 950px){
+    #page1 .paragraph .text{
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+@media screen and (max-width : 600px){
+	#welcome_page{
+        background-color : red;
+    }
+}
