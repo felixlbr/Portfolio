@@ -27,7 +27,7 @@ body{
   font-family: var(--font-family);
   overflow-x: hidden;
   overscroll-behavior: none;
-  background-color: var(--background-color-3);
+  background: var(--background-color-3);
 }
 h1{
   font-size: var(--font-size-title)
@@ -388,4 +388,66 @@ main{
   70% {
     width: 0%;
   }
+}
+
+/* PAGE 4 */
+#page4{
+  height: 300vh;
+}
+#page4 .container{
+  margin-bottom: 0;
+  perspective: 1000px;
+}
+#page4 .logo, #page4 .background{
+  height: 25vw;
+}
+#page4 .background{
+  position:absolute;
+  top: 0;
+  left: 0;
+  z-index: -10;
+  filter: brightness(0) blur(10px);
+}
+#page4 .case{
+  display: flex;
+  justify-content: space-between;
+  width: 70vw;
+  margin-left: auto;
+  margin-right: auto;
+}
+#page4 .case .legend, #page4 .case .text{
+  text-align: center;
+}
+#page4 .case .paragraph{
+  width: 50vw;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#page4 .case .item{
+  border-radius: 10%;
+  transform-style: preserve-3d;
+  /*background-color: var(--background-color-2);
+  box-shadow: #000000 0px 0px 25px 0px;*/
+}
+#page4 .case .item *{
+  transition : all 0.5s;
+}
+#page4 .case .title{
+  padding-bottom: 3vh;
+}
+#page4 .container>.text{
+  padding-top: 3vh;
+  padding-bottom: 3vh;
+  width: 60vw;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: justify;
+}
+#page4 .case .text{
+  margin-top: 1vh;
+  margin-bottom: 1vh;
+  font-size: var(--font-size-nav);
 }

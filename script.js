@@ -6,6 +6,7 @@ gsap.registerPlugin(ScrollToPlugin);
 gsap.registerPlugin(TextPlugin)
 gsap.registerPlugin(EasePack) 
 
+
 ////////////////////////////////////////////////////////////////
 /* WELOME PAGE */
 let tl_welcome_page = gsap.timeline({
@@ -214,7 +215,63 @@ panelP3.forEach((item, i) => {
   });
 });
 
+const containers = document.querySelectorAll('#page4 .case');
+const item = document.querySelectorAll('#page4 .item');
+const shadow = document.querySelectorAll('#page4 .shadow');
 
+containers.forEach(container => {
+  container.addEventListener("mousemove", (e) => {
+    let xAxis = (window.innerWidth / 2 - e.pageX) / 25;
+    let yAxis = (window.innerHeight * 1.5 - (e.pageY - Math.abs(window.scrollY-700))) / 20;
+    item.forEach(item => {
+      item.style.transform = `rotateY(${xAxis}deg) rotateX(${yAxis}deg)`;
+    });
+  });
+  container.addEventListener("mouseenter", (e) => {
+    item.forEach(item => {
+      item.style.transition = `none`;
+    });
+    shadow.forEach(shadow => {
+      shadow.style.transform = 'translateZ(40px)';
+    });
+  });
+  container.addEventListener("mouseleave", (e) => {
+    item.forEach(item => {
+      item.style.transform = `rotateY(0deg) rotateX(0deg)`;
+      item.style.transition = `all 0.5s ease`;
+    });
+    shadow.forEach(shadow => {
+      shadow.style.transform = 'translateZ(0px)';
+    });
+  });
+});
+
+
+let panels = gsap.utils.toArray("#page4 .case");
+panels.forEach((item, i) => {
+  const contentElements = item.querySelectorAll("#page4 .case > *");
+  gsap.set(contentElements, {
+    opacity: 0
+  });
+  ScrollTrigger.create({
+    trigger: item,
+    start: "top center",
+    end: "bottom center",
+    snap: { snapTo: [0.5], duration: 1, delay: 0},
+    onEnter: ({ progress, direction, isActive }) => {
+      gsap.fromTo(contentElements, { y: 80, opacity: 0 }, { y: 0, opacity: 1, stagger: 0.05 });
+    },
+    onLeave: ({ progress, direction, isActive }) => {
+      gsap.fromTo(contentElements, { y: 0, opacity: 1 }, { y: -80, opacity: 0, stagger: 0.05 });
+    },
+    onLeaveBack: ({ progress, direction, isActive }) => {
+      gsap.fromTo(contentElements, { y: 0, opacity: 1 }, { y: 80, opacity: 0, stagger: 0.05 });
+    },
+    onEnterBack: ({ progress, direction, isActive }) => {
+      gsap.fromTo(contentElements, { y: -80, opacity: 0 }, { y: 0,opacity: 1, stagger: 0.05 });
+    }
+  });
+});
 //
 //let tl_header = gsap.timeline({
 //  scrollTrigger: {
