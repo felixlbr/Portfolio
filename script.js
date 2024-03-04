@@ -15,7 +15,7 @@ let tl_welcome_page = gsap.timeline({
     start: "top top",
     end: "bottom top",
     scrub: 1,
-    pin: true,
+    //pin: true,
   },
 });
 tl_welcome_page.to("#welcome_page h1", {scale: 50})

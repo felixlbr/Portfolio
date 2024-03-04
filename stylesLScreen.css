@@ -17,6 +17,8 @@
 }
 html{
     scrollbar-width:none;
+    cursor : url(assets/img/cursor.png) 25 25, auto;
+
 }
 *{
   margin: 0;
@@ -56,7 +58,7 @@ h3{
 
 /* PORTFOLIO PAGE */
 #portfolio_page{
-  top : -100vh;
+  /*top : -100vh;*/
   position: relative;
   background: var(--background-color);
 }
@@ -392,7 +394,7 @@ main{
 
 /* PAGE 4 */
 #page4{
-  height: 300vh;
+  height: max-content;
 }
 #page4 .container{
   margin-bottom: 0;
