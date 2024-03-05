@@ -1,0 +1,137 @@
+:root{
+    --font-size-logo : 1em;
+    --font-size-nav : 2vw;
+    --font-size-title : 3vw;
+    --font-size-s-title : 2.8vw;
+    --font-size-text : 1.5vw;
+  
+      --font-family: 'Roboto', sans-serif;
+  
+      --font-color_principle: #fffbe4;
+      --background-color-1 : #0d1131;
+      --background-color-2 : #4355ff;
+      --background-color-3 : #000000;
+      --background-color : linear-gradient(#000000, #0d1131, #4355ff);
+      --waves-color : #ffffff2f;
+      --max-width: 1250px;
+  }
+  html{
+      scrollbar-width:none;
+  }
+  *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    cursor:
+    url('assets/img/cursor/cursor.cur'), 
+    url('assets/img/cursor/cursor.svg'), 
+    url('assets/img/cursor/cursor.png'), 
+    auto;
+  }
+  a:hover{
+    cursor: pointer;
+  }
+  body{
+    font-family: var(--font-family);
+    overflow-x: hidden;
+    overscroll-behavior: none;
+    background: var(--background-color-3);
+  }
+  h1{
+    font-size: var(--font-size-title)
+  }
+  h2{
+    font-size: var(--font-size-s-title)
+  }
+  h3{
+    font-size: var(--font-size-text)
+  }
+
+@media screen and (max-width : 950px){
+    #page1 .paragraph .text{
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
+
+/* KEY FRAMES */
+@keyframes progress-bar95-entry {
+    0% {
+      width: 0;
+    }
+    95% {
+      width: 95%;
+    }
+  }
+  @keyframes progress-bar90-entry {
+    0% {
+      width: 0;
+    }
+    90% {
+      width: 90%;
+    }
+  }
+  @keyframes progress-bar85-entry {
+    0% {
+      width: 0;
+    }
+    85% {
+      width: 85%;
+    }
+  }
+  @keyframes progress-bar80-entry {
+    0% {
+      width: 0;
+    }
+    80% {
+      width: 80%;
+    }
+  }
+  @keyframes progress-bar70-entry {
+    0% {
+      width: 0;
+    }
+    70% {
+      width: 70%;
+    }
+  }
+  @keyframes progress-bar95-exit {
+    0% {
+      width: 95%;
+    }
+    95% {
+      width: 0%;
+    }
+  }@keyframes progress-bar90-exit {
+    0% {
+      width: 90%;
+    }
+    90% {
+      width: 0%;
+    }
+  }
+  @keyframes progress-bar85-exit {
+    0% {
+      width: 85%;
+    }
+    85% {
+      width: 0%;
+    }
+  }
+  @keyframes progress-bar80-exit {
+    0% {
+      width: 80;
+    }
+    80% {
+      width: 0%;
+    }
+  }
+  @keyframes progress-bar0-exit {
+    0% {
+      width: 70%;
+    }
+    70% {
+      width: 0%;
+    }
+  }

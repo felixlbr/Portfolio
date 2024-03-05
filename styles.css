@@ -1,45 +1,4 @@
-:root{
-  --font-size-logo : 1em;
-  --font-size-nav : 2vw;
-  --font-size-title : 3vw;
-  --font-size-s-title : 2.8vw;
-  --font-size-text : 1.5vw;
 
-    --font-family: 'Roboto', sans-serif;
-
-    --font-color_principle: #fffbe4;
-    --background-color-1 : #0d1131;
-    --background-color-2 : #4355ff;
-    --background-color-3 : #000000;
-    --background-color : linear-gradient(#000000, #0d1131, #4355ff);
-    --waves-color : #ffffff2f;
-    --max-width: 1250px;
-}
-html{
-    scrollbar-width:none;
-    cursor : url(assets/img/cursor.png) 25 25, auto;
-
-}
-*{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-body{
-  font-family: var(--font-family);
-  overflow-x: hidden;
-  overscroll-behavior: none;
-  background: var(--background-color-3);
-}
-h1{
-  font-size: var(--font-size-title)
-}
-h2{
-  font-size: var(--font-size-s-title)
-}
-h3{
-  font-size: var(--font-size-text)
-}
 /* WELCOME PAGE */
 #welcome_page{ 
   height: 100vh;
@@ -56,9 +15,21 @@ h3{
   color: var(--font-color_principle);
 }
 
+/* HEADER */
+#download{
+  border: solid var(--background-color-2);
+  padding: 1vw;
+  border-radius: 20px;
+  transition: all 0.5s;
+}
+#download:hover{
+  background-color: var(--background-color-2);
+  color: var(--font-color_principle);
+  box-shadow: 0 0 20px 2px var(--background-color-2);
+}
+
 /* PORTFOLIO PAGE */
 #portfolio_page{
-  /*top : -100vh;*/
   position: relative;
   background: var(--background-color);
 }
@@ -95,33 +66,8 @@ nav a{
 }
 
 /* MAIN */
-main{
+main{ 
   background-color: var(--background-color);
-  color : wheat
-}
-/*
-.custom-shape-divider-top-1707167368 {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  overflow: hidden;
-  line-height: 0;
-}
-.custom-shape-divider-top-1707167368 svg {
-    position: relative;
-    display: block;
-    width: calc(130% + 1.3px);
-    height: 144px;
-}
-.custom-shape-divider-top-1707167368 .shape-fill {
-    fill: var(--waves-color);
-}
-
-
-*/
-
-main{
   color: var(--font-color_principle);
 }
 .paragraph{
@@ -142,9 +88,8 @@ main{
   height: 88vh;
   width: 99vw;
   color: var(--font-color-page1);
-  /*font-size: 2em;*/
   text-align: center;
-  margin-bottom: 12vh;
+  margin-top: 12vh;
 }
 
 /* PAGE 1 */
@@ -152,6 +97,7 @@ main{
   display: flex;
   justify-content:center;
   align-items: center;
+  margin-top: 0;
 }
 #page1 .paragraph{
   display: flex;
@@ -175,8 +121,6 @@ main{
 }
 
 /* PAGE 2 */
-#page2{
-}
 #page2 .logo{
   height: 8vw;
 }
@@ -267,8 +211,6 @@ main{
   transform-style: preserve-3d;
   margin-left: 3vw;
   margin-right: 3vw;
-  /*background-color: #500000;
-  box-shadow: #000000 0px 0px 30px 0px;*/
 }
 #page3 .wrapper {
   display: flex;
@@ -311,93 +253,13 @@ main{
   height: 10vw;
 }
 
-/* KEY FRAMES */
-@keyframes progress-bar95-entry {
-  0% {
-    width: 0;
-  }
-  95% {
-    width: 95%;
-  }
-}
-@keyframes progress-bar90-entry {
-  0% {
-    width: 0;
-  }
-  90% {
-    width: 90%;
-  }
-}
-@keyframes progress-bar85-entry {
-  0% {
-    width: 0;
-  }
-  85% {
-    width: 85%;
-  }
-}
-@keyframes progress-bar80-entry {
-  0% {
-    width: 0;
-  }
-  80% {
-    width: 80%;
-  }
-}
-@keyframes progress-bar70-entry {
-  0% {
-    width: 0;
-  }
-  70% {
-    width: 70%;
-  }
-}
-@keyframes progress-bar95-exit {
-  0% {
-    width: 95%;
-  }
-  95% {
-    width: 0%;
-  }
-}@keyframes progress-bar90-exit {
-  0% {
-    width: 90%;
-  }
-  90% {
-    width: 0%;
-  }
-}
-@keyframes progress-bar85-exit {
-  0% {
-    width: 85%;
-  }
-  85% {
-    width: 0%;
-  }
-}
-@keyframes progress-bar80-exit {
-  0% {
-    width: 80;
-  }
-  80% {
-    width: 0%;
-  }
-}
-@keyframes progress-bar0-exit {
-  0% {
-    width: 70%;
-  }
-  70% {
-    width: 0%;
-  }
-}
 
 /* PAGE 4 */
 #page4{
   height: max-content;
+  margin-bottom: 12vh;
 }
 #page4 .container{
-  margin-bottom: 0;
   perspective: 1000px;
 }
 #page4 .logo, #page4 .background{
@@ -431,8 +293,6 @@ main{
 #page4 .case .item{
   border-radius: 10%;
   transform-style: preserve-3d;
-  /*background-color: var(--background-color-2);
-  box-shadow: #000000 0px 0px 25px 0px;*/
 }
 #page4 .case .item *{
   transition : all 0.5s;
@@ -442,7 +302,7 @@ main{
 }
 #page4 .container>.text{
   padding-top: 3vh;
-  padding-bottom: 3vh;
+  padding-bottom: 10vh;
   width: 60vw;
   margin-left: auto;
   margin-right: auto;
