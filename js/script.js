@@ -19,9 +19,9 @@ let tl_welcome_page = gsap.timeline({
     //pin: true,
   },
 });
-tl_welcome_page.to("#welcome_page h1", {scale: 50})
-.to("#welcome_page", {opacity: 0}, "<")
-.set("#welcome_page h1", {scale: 0})
+tl_welcome_page.to("#welcome_page h1", {yPercent: 300})
+//.to("#welcome_page", {opacity: 0}, "<")
+//.set("#welcome_page h1", {scale: 0})
 
 ////////////////////////////////////////////////////////////////
 /* PORTFOLIO PAGE */
@@ -48,7 +48,6 @@ ScrollTrigger.create({
 });
 ////////////////////////////////////////////////////////////////
 /* Text + Picture */
-
 let tl_portfolio_page = gsap.timeline({
   scrollTrigger: {
     trigger: "#portfolio_page",
@@ -59,7 +58,7 @@ let tl_portfolio_page = gsap.timeline({
 CustomEase.create("custom", "M0,0 C0,0 0.021,0.105 0.115,0.198 0.143,0.226 0.24,0.158 0.274,0.19 0.334,0.248 0.413,0.269 0.478,0.343 0.621,0.505 0.661,0.806 0.742,0.942 0.781,1.008 0.884,0.945 0.927,0.962 0.955,0.973 1,1 1,1 ")
 tl_portfolio_page
 .fromTo("header, #portfolio_page #page1 *", {y:-100, opacity:0}, { y:0,opacity:1})
-.to(window, {scrollTo:{y:window.innerHeight+1}})
+.to(window, {scrollTo:{y:"#page1"}})
 //.set("body", {overflowY: "hidden"})
 .from("#page1 .paragraph .text", {
   duration: 10, 
@@ -107,7 +106,6 @@ panelsP2.forEach((item) => {
     scrub: 1,
     onEnter: ({ progress, direction, isActive }) => {
       gsap.fromTo(contentElements, {opacity: 0.1}, {opacity: 1, stagger: 0.05 });
-      console.log("scroll", window.scrollY);
     },
     onLeaveBack: ({ progress, direction, isActive }) => {   
       gsap.fromTo(contentElements, {opacity: 1}, {opacity: 0.1});
@@ -130,6 +128,7 @@ let tl_bouygues = gsap.timeline({
 });
 tl_bouygues
 .to("#page2 h1.title", {opacity:0})
+.set("#page2 .container", {overflow: "visible"})
 .to("#page2 .container .case:nth-child(2)", {x:horizontalScrollLength1},"<")
 .to("#page2 .container", {x:-horizontalScrollLength1},"<")
 .to("#page2 .container .case:nth-child(2)", {yPercent:-150})
@@ -189,7 +188,6 @@ panelP3.forEach((item, i) => {
     start: "center center",
     end:() => "+=" +item.offsetHeight*3,
     onEnter: ({ progress, direction, isActive }) => {
-      console.log("onEnter", progress, direction, isActive);
       gsap.fromTo(contentElements, { y: 80, opacity: 0 }, { y: 0, opacity: 1, stagger: 0.05 });
       gsap.set("._9_5_", {animation: "progress-bar95-entry 2s"});
       gsap.set("._9_0_", {animation: "progress-bar90-entry 2s"});
@@ -198,7 +196,6 @@ panelP3.forEach((item, i) => {
       gsap.set("._7_0_", {animation: "progress-bar70-entry 2s"});
     },
     onLeave: ({ progress, direction, isActive }) => {
-      console.log("onLeave", progress, direction, isActive);
       gsap.fromTo(contentElements, { y: 0, opacity: 1 }, { y: -80, opacity: 0, stagger: 0.05 });
       gsap.set("._9_5_", {animation: "progress-bar95-exit 2s"});
       gsap.set("._9_0_", {animation: "progress-bar90-exit 2s"});
@@ -207,7 +204,6 @@ panelP3.forEach((item, i) => {
       gsap.set("._7_0_", {animation: "progress-bar70-exit 2s"});
     },
     onLeaveBack: ({ progress, direction, isActive }) => {
-      console.log("onLeaveBack", progress, direction, isActive);      
       gsap.fromTo(contentElements, { y: 0, opacity: 1 }, { y: 80, opacity: 0, stagger: 0.05 });
       gsap.set("._9_5_", {animation: "progress-bar95-exit 2s"});
       gsap.set("._9_0_", {animation: "progress-bar90-exit 2s"});
@@ -216,7 +212,6 @@ panelP3.forEach((item, i) => {
       gsap.set("._7_0_", {animation: "progress-bar70-exit 2s"});
     },
     onEnterBack: ({ progress, direction, isActive }) => {
-      console.log("onEnterBack", progress, direction, isActive);
       gsap.fromTo(contentElements, { y: -80, opacity: 0 }, { y: 0,opacity: 1, stagger: 0.05 });
       gsap.set("._9_5_", {animation: "progress-bar95-entry 2s"});
       gsap.set("._9_0_", {animation: "progress-bar90-entry 2s"});

@@ -128,6 +128,7 @@ main{
   justify-self: start;
 }
 #page2 .container{
+  overflow: hidden;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
