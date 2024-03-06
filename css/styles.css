@@ -258,7 +258,7 @@ main{
 /* PAGE 4 */
 #page4{
   height: max-content;
-  margin-bottom: 12vh;
+  margin-bottom: 40vh;
 }
 #page4 .container{
   perspective: 1000px;

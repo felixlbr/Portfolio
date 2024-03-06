@@ -127,11 +127,11 @@ let tl_bouygues = gsap.timeline({
   }
 });
 tl_bouygues
-.to("#page2 h1.title", {opacity:0})
+.to("#page2 h1.title", {opacity:0, duration:1},)
 .set("#page2 .container", {overflow: "visible"})
-.to("#page2 .container .case:nth-child(2)", {x:horizontalScrollLength1},"<")
-.to("#page2 .container", {x:-horizontalScrollLength1},"<")
-.to("#page2 .container .case:nth-child(2)", {yPercent:-150})
+.to("#page2 .container .case:nth-child(2)", {x:horizontalScrollLength1, duration:5},"<")
+.to("#page2 .container", {x:-horizontalScrollLength1, duration:5},"<")
+.to("#page2 .container .case:nth-child(2)", {yPercent:-150, duration:3})
 .set("body", {backgroundColor: "var(--background-color-2)"}, "<")
 
 let description = gsap.utils.toArray("#page2 .extensionPage2 .description");
@@ -141,7 +141,7 @@ description.forEach((item) => {
   });
   ScrollTrigger.create({
     trigger: item,
-    start:(window.innerWidth+200) + " top",
+    start:(window.innerWidth+250) + " top",
     end: () => "+=" + (6*item.offsetHeight),
     scrub: 1,
     onEnter: () => {
