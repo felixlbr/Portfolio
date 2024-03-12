@@ -48,10 +48,26 @@
   }
 
 @media screen and (max-width : 950px){
-    #page1 .paragraph .text{
-        padding-left: 0;
-        padding-right: 0;
-    }
+  #page1 .paragraph .text{
+      padding-left: 0;
+      padding-right: 0;
+  }
+}
+@media screen and (max-width : 500px){
+  header{
+    display: none;
+  }
+  #page1{
+    flex-direction: column;
+  }
+  #page1 .paragraph .text{
+      padding-left: 0;
+      padding-right: 0;
+  }
+  #page2 .container{
+    justify-content: space-around;
+  
+  }
 }
 
 

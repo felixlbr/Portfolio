@@ -141,7 +141,7 @@ description.forEach((item) => {
   });
   ScrollTrigger.create({
     trigger: item,
-    start:(window.innerWidth+250) + " top",
+    start:(window.innerWidth+0) + " top",
     end: () => "+=" + (6*item.offsetHeight),
     scrub: 1,
     onEnter: () => {

@@ -314,3 +314,40 @@ main{
   margin-bottom: 1vh;
   font-size: var(--font-size-nav);
 }
+
+/* FOOTER */
+footer{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 100vh;
+  background-color: var(--background-color-1);
+  color: var(--font-color-principle);
+  transition: all 1s;
+}
+
+footer .item{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+footer .item a{
+  text-decoration: none;
+  color: var(--font-color-principle);
+  font-size: var(--font-size-nav);
+  transition: all 0.2s;
+
+}
+
+footer .item i{
+  padding-right: 1vw;
+}
+
+footer .item a:hover{
+  color: var(--background-color-2);
+  cursor: pointer;
+}
+
