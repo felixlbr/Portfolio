@@ -54,6 +54,15 @@
   }
 }
 @media screen and (max-width : 500px){
+  :root{
+    --font-size-logo : 1em;
+    --font-size-nav : 2vw;
+    --font-size-title : 5vw;
+    --font-size-s-title : 4vw;
+    --font-size-text : 3vw;
+  
+  }
+
   header{
     display: none;
   }
@@ -61,12 +70,48 @@
     flex-direction: column;
   }
   #page1 .paragraph .text{
-      padding-left: 0;
-      padding-right: 0;
+      padding-left: 10vw;
+      padding-right: 10vw;
+  }
+  #page1 #profile{
+    margin-top: 5vh;
   }
   #page2 .container{
     justify-content: space-around;
-  
+  }
+  #page2 .hide ul .description{
+    font-size: var(--font-size-text);
+  }
+  #page3{
+    padding-top: 12vh;
+    height: fit-content;
+  }
+  #page3 .case{
+    padding-left: 10vw;
+    padding-right: 10vw;
+  }
+  #page3 .container{
+    flex-direction: column;
+    height: fit-content;
+  }
+  #page3 .item{
+    height: fit-content;
+    width: fit-content;
+  }
+  #page3 .list-item{
+    justify-content: center;
+  }
+  #page3 .shadow{
+    width: 20vw;
+  }
+  #page3 .logo{
+    height: 20vw;
+  }
+  footer{
+    flex-direction: column;
+  }
+  footer .item a{
+    font-size: var(--font-size-text);
   }
 }
 
