@@ -56,7 +56,7 @@
 @media screen and (max-width : 500px){
   :root{
     --font-size-logo : 1em;
-    --font-size-nav : 2vw;
+    --font-size-nav : 3vw;
     --font-size-title : 5vw;
     --font-size-s-title : 4vw;
     --font-size-text : 3vw;
@@ -107,6 +107,10 @@
   }
   #page3 .logo{
     height: 20vw;
+  }
+  #page3 .wrapper h3, #page3 .wrapper data{
+    margin-right: 1vw;
+    font-size: var(--font-size-text);
   }
   footer{
     flex-direction: column;

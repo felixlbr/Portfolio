@@ -117,7 +117,7 @@ panelsP2.forEach((item) => {
 
 let pinWrap1 = document.querySelector("#page2 .container");
 let pinWrapWidth1 = pinWrap1.offsetWidth;
-let horizontalScrollLength1 = pinWrapWidth1 +20//- window.innerWidth + 100;
+let horizontalScrollLength1 = pinWrapWidth1 //+20//- window.innerWidth + 100;
 
 let tl_bouygues = gsap.timeline({
   scrollTrigger: {
