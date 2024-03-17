@@ -28,6 +28,7 @@ tl_welcome_page.to("#welcome_page h1", {yPercent: 300})
 
 ////////////////////////////////////////////////////////////////
 /* PAGE 1 */
+if(window.innerWidth > tel){
   ScrollTrigger.create({
     trigger: "#portfolio_page",
     start: "top top",
@@ -46,7 +47,7 @@ tl_welcome_page.to("#welcome_page h1", {yPercent: 300})
       //gsap.to(window, {scrollTo: {y: 0}, duration: 0.5});
     }
   });
-
+}
 ////////////////////////////////////////////////////////////////
 /* Text + Picture */
 let tl_portfolio_page = gsap.timeline({
