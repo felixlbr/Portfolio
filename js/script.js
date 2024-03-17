@@ -184,7 +184,7 @@ if(window.innerWidth > tel){
     ease: "none"
   });
 
-
+}
 let panelP3 = gsap.utils.toArray("#page3 .case");
 panelP3.forEach((item, i) => {
   const contentElements = item.querySelectorAll(".case > *");
@@ -205,31 +205,16 @@ panelP3.forEach((item, i) => {
     },
     onLeave: ({ progress, direction, isActive }) => {
       gsap.fromTo(contentElements, { y: 0, opacity: 1 }, { y: -80, opacity: 0, stagger: 0.05 });
-      gsap.set("._9_5_", {animation: "progress-bar95-exit 2s"});
-      gsap.set("._9_0_", {animation: "progress-bar90-exit 2s"});
-      gsap.set("._8_5_", {animation: "progress-bar85-exit 2s"});
-      gsap.set("._8_0_", {animation: "progress-bar80-exit 2s"});
-      gsap.set("._7_0_", {animation: "progress-bar70-exit 2s"});
     },
     onLeaveBack: ({ progress, direction, isActive }) => {
       gsap.fromTo(contentElements, { y: 0, opacity: 1 }, { y: 80, opacity: 0, stagger: 0.05 });
-      gsap.set("._9_5_", {animation: "progress-bar95-exit 2s"});
-      gsap.set("._9_0_", {animation: "progress-bar90-exit 2s"});
-      gsap.set("._8_5_", {animation: "progress-bar85-exit 2s"});
-      gsap.set("._8_0_", {animation: "progress-bar80-exit 2s"});
-      gsap.set("._7_0_", {animation: "progress-bar70-exit 2s"});
     },
     onEnterBack: ({ progress, direction, isActive }) => {
       gsap.fromTo(contentElements, { y: -80, opacity: 0 }, { y: 0,opacity: 1, stagger: 0.05 });
-      gsap.set("._9_5_", {animation: "progress-bar95-entry 2s"});
-      gsap.set("._9_0_", {animation: "progress-bar90-entry 2s"});
-      gsap.set("._8_5_", {animation: "progress-bar85-entry 2s"});
-      gsap.set("._8_0_", {animation: "progress-bar80-entry 2s"});
-      gsap.set("._7_0_", {animation: "progress-bar70  -entry 2s"});
     }
   });
 });
-}
+
 ////////////////////////////////////////////////////////////////
 /* PAGE 4 */
 

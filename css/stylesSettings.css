@@ -59,10 +59,12 @@
     --font-size-nav : 3vw;
     --font-size-title : 5vw;
     --font-size-s-title : 4vw;
-    --font-size-text : 3vw;
+    --font-size-text : 3.5vw;
   
   }
-
+  #welcome_page h1{
+    font-size: 10vh;
+  }
   header{
     display: none;
   }
@@ -82,17 +84,37 @@
   #page2 .hide ul .description{
     font-size: var(--font-size-text);
   }
+  #page2 .logo{
+    height: 15vw;
+  }
+  #page2 .case .paragraph .text:nth-child(2){
+    font-size: 3vw;
+  }
+  #page2 .item{
+    margin-bottom: 2vh;
+  }
+  #page2 .case{
+    display: flex;
+    flex-direction: column;
+    margin-left: 0;
+    margin-right: 0;
+    width: 80vw;
+  }
+  #page2 .hide{
+  }
   #page3{
     padding-top: 12vh;
     height: fit-content;
   }
   #page3 .case{
-    padding-left: 10vw;
-    padding-right: 10vw;
+    width: 80vw;
+    padding-left: 0vw;
+    padding-right: 0vw;
   }
   #page3 .container{
     flex-direction: column;
     height: fit-content;
+    align-items: center;
   }
   #page3 .item{
     height: fit-content;
@@ -101,6 +123,9 @@
   }
   #page3 .list-item{
     justify-content: center;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
   }
   #page3 .shadow{
     width: 20vw;
@@ -112,7 +137,15 @@
     margin-right: 1vw;
     font-size: var(--font-size-text);
   }
+  #page4 .container>.text{
+    width: 80vw;
+  }
   #page4 .case{
+    width: 80vw;
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+  #page4 .case .paragraph{
     width: 80vw;
   }
   #page4 .case .item .background{
@@ -130,7 +163,7 @@
 /* KEY FRAMES */
 @keyframes progress-bar95-entry {
     0% {
-      width: 0;
+      width: 0%;
     }
     95% {
       width: 95%;
@@ -138,7 +171,7 @@
   }
   @keyframes progress-bar90-entry {
     0% {
-      width: 0;
+      width: 0%;
     }
     90% {
       width: 90%;
@@ -146,7 +179,7 @@
   }
   @keyframes progress-bar85-entry {
     0% {
-      width: 0;
+      width: 0%;
     }
     85% {
       width: 85%;
@@ -154,7 +187,7 @@
   }
   @keyframes progress-bar80-entry {
     0% {
-      width: 0;
+      width: 0%;
     }
     80% {
       width: 80%;
@@ -162,48 +195,9 @@
   }
   @keyframes progress-bar70-entry {
     0% {
-      width: 0;
+      width: 0%;
     }
     70% {
       width: 70%;
-    }
-  }
-  @keyframes progress-bar95-exit {
-    0% {
-      width: 95%;
-    }
-    95% {
-      width: 0%;
-    }
-  }@keyframes progress-bar90-exit {
-    0% {
-      width: 90%;
-    }
-    90% {
-      width: 0%;
-    }
-  }
-  @keyframes progress-bar85-exit {
-    0% {
-      width: 85%;
-    }
-    85% {
-      width: 0%;
-    }
-  }
-  @keyframes progress-bar80-exit {
-    0% {
-      width: 80;
-    }
-    80% {
-      width: 0%;
-    }
-  }
-  @keyframes progress-bar0-exit {
-    0% {
-      width: 70%;
-    }
-    70% {
-      width: 0%;
     }
   }
