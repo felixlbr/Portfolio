@@ -133,7 +133,7 @@ tl_bouygues
 .set("#page2 .container", {overflow: "visible"})
 .to("#page2 .container .case:nth-child(2)", {x:horizontalScrollLength1, duration:5},"<")
 .to("#page2 .container", {x:-horizontalScrollLength1, duration:5},"<")
-.to("#page2 .container .case:nth-child(2)", {yPercent:-150, duration:3})
+.to("#page2 .container .case:nth-child(2)", {yPercent:-150, duration:12})
 
 
 let var_tel = window.innerWidth;
